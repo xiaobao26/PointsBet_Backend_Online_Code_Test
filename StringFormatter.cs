@@ -14,7 +14,7 @@ namespace PointsBet_Backend_Online_Code_Test
     */
     
     /// <summary>
-    /// Change the string array to a comma-separated list
+    /// Change the string array to a comma-separated string
     /// Wrap each element in the specified quote string.
     /// <param name="items">String array, cannot be null</param>
     /// <param name="quote">String, a specified quote string. e.g. "|", "\", ...</param>
