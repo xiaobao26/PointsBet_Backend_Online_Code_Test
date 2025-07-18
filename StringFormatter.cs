@@ -12,6 +12,19 @@ namespace PointsBet_Backend_Online_Code_Test
       - Fixing typos
       - Any other light-weight optimisation
     */
+    
+    /// <summary>
+    /// Change the string array to a comma-separated list
+    /// Wrap each element in the specified quote string.
+    /// <param name="items">String array, cannot be null</param>
+    /// <param name="quote">String, a specified quote string. e.g. "|", "\", ...</param>
+    /// <returns>
+    ///     e.g.: if items = ["Hello", "World"]
+    ///              quote = "|"
+    ///         string result = "|Hello|, |World|"
+    /// </returns>
+    /// <exception cref="ArgumentNullException">Throw when parameters are null</exception>
+    /// </summary>
     public class StringFormatter
     {
 
