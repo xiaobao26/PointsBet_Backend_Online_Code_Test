@@ -16,18 +16,28 @@ namespace PointsBet_Backend_Online_Code_Test
     {
 
         //Code to improve
-        public static string ToCommaSepatatedList(string[] items, string quote)
+        public static string ToCommaSeparatedList(string[] items, string quote)
         {
-            StringBuilder qry = new StringBuilder(string.Format("{0}{1}{0}", quote, items[0]));
+            if (items is null)
+                throw new ArgumentNullException(nameof(items), "items cannot be null");
+            
+            if (quote is null) 
+                throw new ArgumentNullException(nameof(quote), "quote cannot be null");
 
-            if (items.Length > 1)
+            if (items.Length == 0)
+                return string.Empty;
+            
+            StringBuilder qry = new StringBuilder();
+            for (int i = 0; i < items.Length; i++)
             {
-                for (int i = 1; i < items.Length; i++)
+                if (i > 0)
                 {
-                    qry.Append(string.Format(", {0}{1}{0}", quote, items[i]));
+                    qry.Append(",");
                 }
+                qry.Append(quote);
+                qry.Append(items[i]);
+                qry.Append(quote);
             }
-
             return qry.ToString();
         }
     }
